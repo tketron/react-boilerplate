@@ -12,7 +12,7 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -22,10 +22,19 @@ import ViewStringsPage from '../ViewStringsPage';
 export default function App() {
   return (
     <div>
+      <Link to="/" href="/">
+        Home
+      </Link>
+      <Link to="/new" href="/new">
+        Add a new String
+      </Link>
+      <Link to="/all" href="/all">
+        View all the strings
+      </Link>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/new" component={AddStringPage} />
-        <Route exact path="/strings" component={ViewStringsPage} />
+        <Route exact path="/all" component={ViewStringsPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
