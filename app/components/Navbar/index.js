@@ -6,9 +6,6 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <div>
-        <Link to="/" href="/">
-          Home
-        </Link>
         <Link to="/new" href="/new">
           Add a new String
         </Link>

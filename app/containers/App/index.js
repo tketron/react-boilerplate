@@ -12,9 +12,8 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import AddStringPage from '../AddStringPage';
 import ViewStringsPage from '../ViewStringsPage';
@@ -25,7 +24,7 @@ export default function App() {
     <div>
       <Navbar />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Redirect exact from="/" to="/all" />
         <Route exact path="/new" component={AddStringPage} />
         <Route exact path="/all" component={ViewStringsPage} />
         <Route component={NotFoundPage} />
