@@ -16,12 +16,16 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import AddStringPage from '../AddStringPage';
+import ViewStringsPage from '../ViewStringsPage';
 
 export default function App() {
   return (
     <div>
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/new" component={AddStringPage} />
+        <Route exact path="/strings" component={ViewStringsPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
