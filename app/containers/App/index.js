@@ -12,25 +12,18 @@
  */
 
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import AddStringPage from '../AddStringPage';
 import ViewStringsPage from '../ViewStringsPage';
+import Navbar from '../../components/Navbar';
 
 export default function App() {
   return (
     <div>
-      <Link to="/" href="/">
-        Home
-      </Link>
-      <Link to="/new" href="/new">
-        Add a new String
-      </Link>
-      <Link to="/all" href="/all">
-        View all the strings
-      </Link>
+      <Navbar />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/new" component={AddStringPage} />
