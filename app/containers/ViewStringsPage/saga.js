@@ -1,10 +1,13 @@
-import { takeLatest, call, put, select } from 'redux-saga/effects';
+import { takeLatest, call, put } from 'redux-saga/effects';
 import { LOAD_STRINGS } from './constants';
 import { stringsLoaded, stringsLoadingError } from './actions';
+import request from '../../utils/request';
 
-export function* getStrings() {
+function* getStrings() {
+  const requestURL = `http://localhost:3000/strings`;
   try {
-    yield put(stringsLoaded());
+    const strings = yield call(request, requestURL);
+    yield put(stringsLoaded(strings));
   } catch (e) {
     yield put(stringsLoadingError(e));
   }
