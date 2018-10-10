@@ -22,7 +22,7 @@ class ViewStringsPage extends React.Component {
     return (
       <div>
         <h1>View Strings Page</h1>
-        {this.props.strings.map(s => <p>{s.string}</p>)}
+        {this.props.strings.map(s => <p key={s.id}>{s.string}</p>)}
       </div>
     );
   }
