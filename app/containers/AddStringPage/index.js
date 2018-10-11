@@ -7,7 +7,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
@@ -16,12 +15,10 @@ import injectReducer from 'utils/injectReducer';
 import makeSelectAddStringPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
 
 import { addNewString } from './actions';
 
-// import NewStringForm from '../../components/NewStringForm';
-// import Form from './Form';
+import AddStringContainer from './AddStringContainer';
 import Input from './Input';
 import AddStringButton from './AddStringButton';
 
@@ -58,8 +55,7 @@ export class AddStringPage extends React.Component {
 
   render() {
     return (
-      <div>
-        {/* <FormattedMessage {...messages.header} /> */}
+      <AddStringContainer>
         <Input
           type="text"
           name="newString"
@@ -68,9 +64,8 @@ export class AddStringPage extends React.Component {
           inputColor={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
         />
         <AddStringButton onClick={this.handleSubmit}>Add It!</AddStringButton>
-        {/* <button onClick={this.handleSubmit}>Add It!</button> */}
         <div>{this.state.errormessage}</div>
-      </div>
+      </AddStringContainer>
     );
   }
 }
