@@ -17,7 +17,7 @@ router.post('/add', async (req, res, next) => {
       'INSERT INTO strings (string) VALUES ($1) RETURNING *',
       [req.body.string],
     );
-    return res.status(201).json(results.rows);
+    return res.status(201).json(results.rows[0]);
   } catch (e) {
     return next(e);
   }

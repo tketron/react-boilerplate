@@ -1,6 +1,6 @@
 import { takeLatest, call, put, select } from 'redux-saga/effects';
 import { ADD_STRING } from './constants';
-import { addNewString, addNewStringError } from './actions';
+import { addNewStringError, addNewStringSuccess } from './actions';
 import { makeSelectNewString } from './selectors';
 import request from '../../utils/request';
 
@@ -16,6 +16,7 @@ function* addString() {
   };
   try {
     yield call(request, requestURL, requestOptions);
+    yield put(addNewStringSuccess());
   } catch (e) {
     yield put(addNewStringError(e));
   }
