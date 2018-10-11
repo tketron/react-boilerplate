@@ -22,7 +22,7 @@ import { addNewString } from './actions';
 
 // import NewStringForm from '../../components/NewStringForm';
 // import Form from './Form';
-// import Input from './Input';
+import Input from './Input';
 
 /* eslint-disable react/prefer-stateless-function */
 export class AddStringPage extends React.Component {
@@ -59,12 +59,19 @@ export class AddStringPage extends React.Component {
     return (
       <div>
         <FormattedMessage {...messages.header} />
-        <input
+        <Input
           type="text"
           name="newString"
           value={this.state.newString}
           onChange={this.handleChange}
+          inputColor={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
         />
+        {/* <input
+          type="text"
+          name="newString"
+          value={this.state.newString}
+          onChange={this.handleChange}
+        /> */}
         <button onClick={this.handleSubmit}>Add It!</button>
         <div>{this.state.errormessage}</div>
         {/* <Form>
