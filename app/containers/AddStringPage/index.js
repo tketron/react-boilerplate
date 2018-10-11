@@ -61,6 +61,7 @@ export class AddStringPage extends React.Component {
           name="newString"
           value={this.state.newString}
           onChange={this.handleChange}
+          placeholder="Put your string here!"
           inputColor={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
         />
         <AddStringButton onClick={this.handleSubmit}>Add It!</AddStringButton>

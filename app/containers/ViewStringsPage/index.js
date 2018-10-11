@@ -16,14 +16,20 @@ import {
 } from './selectors';
 import { loadStrings } from './actions';
 
+import ViewStringsContainer from './ViewStringsContainer';
+import StringContainer from './StringContainer';
+
 /* eslint-disable react/prefer-stateless-function */
 class ViewStringsPage extends React.Component {
   render() {
     return (
-      <div>
-        <h1>View Strings Page</h1>
-        {this.props.strings.map(s => <p key={s.id}>{s.string}</p>)}
-      </div>
+      <ViewStringsContainer>
+        {this.props.strings.map(s => (
+          <StringContainer key={s.id} fontSize={`${Math.random() * 30 + 8}px`}>
+            {s.string}
+          </StringContainer>
+        ))}
+      </ViewStringsContainer>
     );
   }
 }
