@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const NavbarContainer = styled.div`
   display: flex;
-  padding: 2em;
+  padding: 1em;
   justify-content: space-around;
-  background: papayawhip;
+  background: #e5fcf9;
 `;
 
 export default NavbarContainer;
