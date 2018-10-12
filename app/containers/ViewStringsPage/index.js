@@ -9,11 +9,7 @@ import injectSaga from '../../utils/injectSaga';
 import reducer from './reducer';
 import saga from './saga';
 
-import {
-  makeSelectStrings,
-  makeSelectLoading,
-  makeSelectError,
-} from './selectors';
+import { makeSelectStrings } from './selectors';
 import { loadStrings } from './actions';
 
 import ViewStringsContainer from './ViewStringsContainer';
@@ -46,8 +42,6 @@ function mapDispatchToProps(dispatch) {
 
 const mapStateToProps = createStructuredSelector({
   strings: makeSelectStrings(),
-  loading: makeSelectLoading(),
-  error: makeSelectError(),
 });
 
 const withConnect = connect(

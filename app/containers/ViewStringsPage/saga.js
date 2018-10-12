@@ -1,5 +1,6 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 import { LOAD_STRINGS } from './constants';
+import { ADD_STRING_SUCCESS } from '../AddStringPage/constants';
 import { stringsLoaded, stringsLoadingError } from './actions';
 import request from '../../utils/request';
 
@@ -16,5 +17,8 @@ function* getStrings() {
 // Root saga
 export default function* rootSaga() {
   // if necessary, start multiple sagas at once with `all`
-  yield takeLatest(LOAD_STRINGS, getStrings);
+  yield [
+    takeLatest(LOAD_STRINGS, getStrings),
+    takeLatest(ADD_STRING_SUCCESS, getStrings),
+  ];
 }

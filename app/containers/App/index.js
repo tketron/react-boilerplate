@@ -17,7 +17,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import AddStringPage from '../AddStringPage';
 import ViewStringsPage from '../ViewStringsPage';
-import Navbar from '../../components/Navbar';
+import Navbar from '../Navbar';
 
 export default function App() {
   return (

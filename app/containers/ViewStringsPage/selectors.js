@@ -3,24 +3,14 @@
  */
 
 import { createSelector } from 'reselect';
+import { initialState } from './reducer';
 
-const selectGlobal = state => state.get('viewstrings');
-
-const selectRoute = state => state.get('route');
+const selectViewStringsPageDomain = state =>
+  state.get('viewstrings', initialState);
 
 const makeSelectStrings = () =>
-  createSelector(selectGlobal, globalState => globalState.get('strings'));
+  createSelector(selectViewStringsPageDomain, viewStringState =>
+    viewStringState.get('strings'),
+  );
 
-const makeSelectLoading = () =>
-  createSelector(selectGlobal, globalState => globalState.get('loading'));
-
-const makeSelectError = () =>
-  createSelector(selectGlobal, globalState => globalState.get('error'));
-
-export {
-  selectGlobal,
-  selectRoute,
-  makeSelectStrings,
-  makeSelectLoading,
-  makeSelectError,
-};
+export { makeSelectStrings };
