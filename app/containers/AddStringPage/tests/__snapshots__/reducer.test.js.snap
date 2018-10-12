@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addStringPageReducer handles the addString action 1`] = `
+Immutable.Map {
+  "newString": "test string",
+}
+`;
+
+exports[`addStringPageReducer returns the initial state 1`] = `
+Immutable.Map {
+  "newString": "",
+}
+`;
