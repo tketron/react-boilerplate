@@ -1,8 +1,12 @@
-// import { fromJS } from 'immutable';
-// import { selectAddStringPageDomain } from '../selectors';
+import { fromJS } from 'immutable';
+import { selectAddStringPageDomain } from '../selectors';
 
 describe('selectAddStringPageDomain', () => {
-  xit('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('should select the global state', () => {
+    const globalState = fromJS({});
+    const mockedState = fromJS({
+      addStringPage: globalState,
+    });
+    expect(selectAddStringPageDomain(mockedState)).toEqual(globalState);
   });
 });
