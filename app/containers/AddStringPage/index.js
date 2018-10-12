@@ -40,7 +40,7 @@ export class AddStringPage extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    if (this.state.newString != '') {
+    if (this.state.newString !== '') {
       this.props.onAddString(this.state.newString);
       this.setState({
         newString: '',
@@ -72,7 +72,6 @@ export class AddStringPage extends React.Component {
 }
 
 AddStringPage.propTypes = {
-  dispatch: PropTypes.func,
   onAddString: PropTypes.func,
 };
 
