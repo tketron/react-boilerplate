@@ -31,7 +31,7 @@ class ViewStringsPage extends React.Component {
 }
 
 ViewStringsPage.propTypes = {
-  strings: PropTypes.array,
+  strings: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 function mapDispatchToProps(dispatch) {
